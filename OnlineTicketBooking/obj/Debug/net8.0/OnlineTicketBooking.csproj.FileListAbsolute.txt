@@ -1,0 +1,14 @@
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\bin\Debug\net8.0\OnlineTicketBooking.deps.json
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\bin\Debug\net8.0\OnlineTicketBooking.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\bin\Debug\net8.0\OnlineTicketBooking.pdb
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.csproj.AssemblyReference.cache
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.AssemblyInfoInputs.cache
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.AssemblyInfo.cs
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.csproj.CoreCompileInputs.cache
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\refint\OnlineTicketBooking.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.pdb
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\ref\OnlineTicketBooking.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\bin\Debug\net8.0\OnlineTicketBooking.runtimeconfig.json
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBooking\obj\Debug\net8.0\OnlineTicketBooking.genruntimeconfig.cache

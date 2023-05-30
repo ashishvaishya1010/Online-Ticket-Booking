@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EjU7lsGdyCmbOFfWWBatMWcvyoSlXY9vDdKv1M3iCQ4=",
+  "Source": "OnlineticketBooking.Api",
+  "BasePath": "_content/OnlineticketBooking.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

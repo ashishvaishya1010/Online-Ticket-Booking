@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.4.23261.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\OnlineticketBooking.Api\OnlineticketBooking.Api.csproj" />
-    <ProjectReference Include="..\OnlineTicketBooking\OnlineTicketBooking.csproj" />
+    <ProjectReference Include="..\OnlineTicketBooking\OnlineTicketBooking.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

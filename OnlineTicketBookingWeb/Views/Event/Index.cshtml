@@ -1,1 +1,71 @@
-﻿<h1>Event List</h1>
+﻿@model IEnumerable<OnlineTicketBookingWeb.Models.EventsVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Event List</h1>
+<div class="col text-end pt-1">
+    <a asp-controller="Event" asp-action="CreatePage" class="btn btn-outline-primary">Create New Event</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovalStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovalStatus)
+            </td>
+            <td>
+                <a type="button" class="btn btn-warning" asp-action="editpage" asp-route-id="@item.Id" asp-controller="Event">Edit</a>
+
+                 <a type="button" class="btn btn-danger" asp-action="Deletebyid" asp-route-id="@item.Id" asp-controller="Event">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

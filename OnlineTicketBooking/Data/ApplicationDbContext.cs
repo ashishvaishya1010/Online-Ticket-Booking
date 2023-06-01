@@ -21,10 +21,7 @@ namespace OnlineTicketBooking.Data
 
         }
 
-        public Task Login(LoginRequestDTO model)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 
 }

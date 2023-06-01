@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineTicketBooking.Data;
+using OnlineTicketBooking.DataAccess.Model;
 using OnlineTicketBooking.Model;
 using OnlineTicketBooking.Repository.IRepository;
 
@@ -12,17 +14,27 @@ namespace OnlineticketBooking.Api.Controllers
     {
         private readonly ApplicationDbContext _databaseContext;
         private readonly IEventRepository _eventRepository;
-
+        protected APIResponse _APIResponse;
         public EventController(ApplicationDbContext databaseContext, IEventRepository eventRepository)
         {
             _databaseContext = databaseContext;
             _eventRepository = eventRepository;
+            this._APIResponse = new();
+
         }
-        [HttpGet]
+        [HttpGet("{id:int}")]
+        public IActionResult Getbyid(int id)
+        {
+            var data = _databaseContext.Events.Find(id);
+            _APIResponse.Result = data;
+            return Ok(_APIResponse);
+        }
+            [HttpGet]
         public IActionResult Get()
         {
             var result = _eventRepository.Get();
-            return Ok(result);
+            _APIResponse.Result = result;
+            return Ok(_APIResponse);
         }
         [HttpPost]
         public IActionResult Create(Event Event)
@@ -39,7 +51,7 @@ namespace OnlineticketBooking.Api.Controllers
             _eventRepository.Save();
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{Eventid:int}")]
         public IActionResult Delete(int Eventid)
         {
             _eventRepository.Delete(Eventid);

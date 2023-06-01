@@ -1261,7 +1261,7 @@
           }
         }
       },
-      "OnlineTicketBooking/1.0.0": {
+      "OnlineTicketBooking.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -1271,10 +1271,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3"
         },
         "compile": {
-          "bin/placeholder/OnlineTicketBooking.dll": {}
+          "bin/placeholder/OnlineTicketBooking.DataAccess.dll": {}
         },
         "runtime": {
-          "bin/placeholder/OnlineTicketBooking.dll": {}
+          "bin/placeholder/OnlineTicketBooking.DataAccess.dll": {}
         }
       }
     }
@@ -3573,10 +3573,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "OnlineTicketBooking/1.0.0": {
+    "OnlineTicketBooking.DataAccess/1.0.0": {
       "type": "project",
-      "path": "../OnlineTicketBooking/OnlineTicketBooking.csproj",
-      "msbuildProject": "../OnlineTicketBooking/OnlineTicketBooking.csproj"
+      "path": "../OnlineTicketBooking/OnlineTicketBooking.DataAccess.csproj",
+      "msbuildProject": "../OnlineTicketBooking/OnlineTicketBooking.DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3587,7 +3587,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.4.23259.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.4.23259.3",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.4.23259.3",
-      "OnlineTicketBooking >= 1.0.0",
+      "OnlineTicketBooking.DataAccess >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -3624,8 +3624,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj": {
-              "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj"
+            "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj"
             }
           }
         }

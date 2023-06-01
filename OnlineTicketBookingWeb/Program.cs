@@ -1,6 +1,15 @@
+using OnlineTicketBooking.Repository.IRepository;
+using OnlineTicketBooking.Repository;
+using OnlineTicketBookingWeb.Services.IServices;
+using OnlineTicketBookingWeb.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient<IEventService, EventService>();
+builder.Services.AddTransient<IEventService, EventService>();
+builder.Services.AddHttpClient<IBookingService, BookingService>();
+builder.Services.AddTransient<IBookingService, BookingService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

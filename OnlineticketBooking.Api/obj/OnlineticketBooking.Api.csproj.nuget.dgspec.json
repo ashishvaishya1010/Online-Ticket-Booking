@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj": {
-                "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj"
+              "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj"
               }
             }
           }
@@ -105,12 +105,12 @@
         }
       }
     },
-    "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj": {
+    "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj",
-        "projectName": "OnlineTicketBooking",
-        "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.csproj",
+        "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
+        "projectName": "OnlineTicketBooking.DataAccess",
+        "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
         "packagesPath": "C:\\Users\\ashish.vaishya\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\obj\\",
         "projectStyle": "PackageReference",

@@ -14,7 +14,7 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0-preview.4.23259.3",
-          "OnlineTicketBooking": "1.0.0",
+          "OnlineTicketBooking.DataAccess": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -737,7 +737,7 @@
           }
         }
       },
-      "OnlineTicketBooking/1.0.0": {
+      "OnlineTicketBooking.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0-preview.4.23260.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0-preview.4.23260.4",
@@ -745,7 +745,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3"
         },
         "runtime": {
-          "OnlineTicketBooking.dll": {}
+          "OnlineTicketBooking.DataAccess.dll": {}
         }
       }
     }
@@ -1267,7 +1267,7 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "OnlineTicketBooking/1.0.0": {
+    "OnlineTicketBooking.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

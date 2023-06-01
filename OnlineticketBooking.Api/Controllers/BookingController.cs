@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineTicketBooking.Data;
+using OnlineTicketBooking.DataAccess.Model;
 using OnlineTicketBooking.Model;
 using OnlineTicketBooking.Repository.IRepository;
 
@@ -13,17 +15,30 @@ namespace OnlineticketBooking.Api.Controllers
         private readonly ApplicationDbContext _databaseContext;
         private readonly IBookingRepository _bookingRepository;
         private object _dbContext;
+        protected APIResponse _APIResponse;
 
-        public BookingController(ApplicationDbContext dbContext, IBookingRepository bookingRepository)
+        public BookingController(ApplicationDbContext databaseContext, IBookingRepository bookingRepository)
         {
-            _dbContext = dbContext;
+            _databaseContext = databaseContext;
             _bookingRepository = bookingRepository;
+            this._APIResponse = new APIResponse();
         }
+
+      
         [HttpGet]
         public IActionResult Get()
         {
             var result = _bookingRepository.Get();
-            return Ok(result);
+            _APIResponse.Result = result;
+            return Ok(_APIResponse);
+        }
+
+        [HttpGet("{id:int}")]
+        public IActionResult Getbyid(int id)
+        {
+            var data = _databaseContext.Bookings.Find(id);
+            _APIResponse.Result = data;
+            return Ok(_APIResponse);
         }
         [HttpPost]
         public IActionResult Create(Booking booking)
@@ -40,7 +55,7 @@ namespace OnlineticketBooking.Api.Controllers
             _bookingRepository.Save();
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{Bookingid:int}")]
         public IActionResult Delete(int id)
         {
             _bookingRepository.Delete(id);

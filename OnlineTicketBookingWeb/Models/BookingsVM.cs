@@ -2,21 +2,18 @@
 
 namespace OnlineTicketBookingWeb.Models
 {
-    public class Bookings
+    public class BookingsVM
     {
         public int Id { get; set; }
-
         [Required]
         public int EventId { get; set; }
-
+        public string UserEmail { get; set; }
         [Required]
         public string UserName { get; set; }
-
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Number of tickets must be at least 1.")]
         public int NumberOfTickets { get; set; }
+        public string ApprovedStatus { get; set; }
 
-        public EventsVM Event { get; set; }
+
     }
 }
    

@@ -7,9 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient<IEventService, EventService>();
-builder.Services.AddTransient<IEventService, EventService>();
+builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddHttpClient<IBookingService, BookingService>();
-builder.Services.AddTransient<IBookingService, BookingService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddHttpClient<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

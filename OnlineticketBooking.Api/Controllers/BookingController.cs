@@ -55,13 +55,41 @@ namespace OnlineticketBooking.Api.Controllers
             _bookingRepository.Save();
             return Ok();
         }
-        [HttpDelete("{Bookingid:int}")]
+        [HttpPut("Approve/{id:int}")]
+        public IActionResult Updatebyid(int id)
+        {
+            var data = _databaseContext.Bookings.Find(id);
+            data.ApprovedStatus = "Approved";
+            _bookingRepository.Update(data);
+            _bookingRepository.Save();
+            return Ok();
+
+
+        }
+
+        [HttpPut("Reject/{id:int}")]
+        public IActionResult UpdatebyidReject(int id)
+        {
+            var data = _databaseContext.Bookings.Find(id);
+            data.ApprovedStatus = "Rejected";
+            _bookingRepository.Update(data);
+            _bookingRepository.Save();
+            return Ok();
+
+
+        }
+
+
+
+        [HttpDelete("{id:int}")]
+
         public IActionResult Delete(int id)
         {
             _bookingRepository.Delete(id);
             _bookingRepository.Save();
             return Ok();
         }
-
     }
+
 }
+

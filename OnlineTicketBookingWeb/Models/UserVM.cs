@@ -2,7 +2,7 @@
 
 namespace OnlineTicketBookingWeb.Models
 {
-    public class User
+    public class UserVM
     {
         [StringLength(20, ErrorMessage = "Name cannot exceed 20 characters.")]
         public string UserName { get; set; }

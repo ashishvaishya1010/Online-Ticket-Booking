@@ -16,13 +16,14 @@ namespace OnlineTicketBookingWeb.Services
 
         }
 
-        public Task<T> CreateAsync<T>(Bookings bookings)
+        public Task<T> CreateAsync<T>(BookingsVM bookings)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Post",
+                
                 Data = bookings,
-                Url = bookingUrl + "/api/Booking",
+                Url = bookingUrl + "/api/Booking"
                 // Token = Token
 
             });
@@ -62,16 +63,37 @@ namespace OnlineTicketBookingWeb.Services
             });
         }
 
-        public Task<T> UpdateAsync<T>(Bookings dto)
+        public Task<T> UpdateAsync<T>(BookingsVM bookings)
         {
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Put",
-                Data = dto,
-                Url = bookingUrl + "/api/Booking/" + dto.Id,
+                Data = bookings,
+                Url = bookingUrl + "/api/Booking/" + bookings.Id,
 
 
             });
+        }
+        public Task<T> Updatebyid<T>(int id)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = "Put",
+                Url = bookingUrl + "/api/Booking/Approve/" + id
+            }
+                );
+        }
+
+        public Task<T> UpdatebyidReject<T>(int id)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = "Put",
+                Url = bookingUrl + "/api/Booking/Reject/" + id
+            }
+                );
+
+
         }
 
 

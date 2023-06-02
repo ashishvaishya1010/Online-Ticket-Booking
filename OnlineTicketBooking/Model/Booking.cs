@@ -17,11 +17,9 @@ namespace OnlineTicketBooking.Model
         [Required]
         public string UserName { get; set; }
 
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Number of tickets must be at least 1.")]
+        public string ApprovedStatus { get; set; }
         public int NumberOfTickets { get; set; }
-
-        public Event Event { get; set; }
+        
     }
 }
 

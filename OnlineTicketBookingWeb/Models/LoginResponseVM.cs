@@ -1,8 +1,8 @@
 ﻿namespace OnlineTicketBookingWeb.Models
 {
-    public class LoginResponse
+    public class LoginResponseVM
     {
-        public User User { get; set; }
+        public UserVM User { get; set; }
         public string Token { get; set; }
     }
 }

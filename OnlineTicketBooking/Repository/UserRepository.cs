@@ -133,6 +133,14 @@ namespace OnlineTicketBooking.Repository
             return User;
         }
 
+        public User GetByEmail(string UserEmail)
+        {
+            if (UserEmail != null) {
+   
+            }
+            User user = _dbContext.Users.Find(UserEmail);
+            return user;
+        }
     }
 }
 

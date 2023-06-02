@@ -3598,11 +3598,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineticketBooking.Api\\OnlineticketBooking.Api.csproj",
+      "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineticketBooking.Api\\OnlineticketBooking.Api.csproj",
       "projectName": "OnlineticketBooking.Api",
-      "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineticketBooking.Api\\OnlineticketBooking.Api.csproj",
+      "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineticketBooking.Api\\OnlineticketBooking.Api.csproj",
       "packagesPath": "C:\\Users\\ashish.vaishya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineticketBooking.Api\\obj\\",
+      "outputPath": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineticketBooking.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3624,8 +3624,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj"
+            "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj"
             }
           }
         }

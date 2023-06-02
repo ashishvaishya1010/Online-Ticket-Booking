@@ -9,11 +9,33 @@
 
 <div>
     <h4>BookingDetails</h4>
-    <hr />
-    <dl class="row">
-    </dl>
 </div>
+
+<div Class="row">
+    <div class="col-md-6 square rounded border border-primary gap-3 p-3">
+        <div>Email :@Model.userVM.UserEmail</div>
+        <div>Name :@Model.userVM.UserName</div>
+    </div>
+    <div class="col-md-6 square rounded border border-primary gap-3 p-3">
+        <div>Name :@Model.eventsVM.EventName</div>
+        <div>Date :@Convert.ToString(@Model.eventsVM.EventDate.ToString("dd-mm-yyyy"))</div>
+        <div>Location :@Model.eventsVM.Location</div>
+        <div>Seats :@Model.eventsVM.AvailableSeats</div>
+    </div>
+
+</div>
+<div class="p-5">
+    <div class="row">
+        <div class="col p-3 text-end">
+            <a type="button" class="btn btn-success" asp-action="Updatebyid" asp-route-id=" @ViewData["Bookid"]" asp-action="">Approve</a>
+        </div>
+        <div class="col p-3">
+            <a type="button" class="btn btn-danger" asp-controller="TicketBooking" asp-action="UpdatebyidReject" asp-route-id=" @ViewData["Bookid"]" asp-action="Index">Reject</a>
+        </div>
+    </div>
+</div>
+
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <a type="button" class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>
+

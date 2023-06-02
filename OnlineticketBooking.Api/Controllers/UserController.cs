@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Azure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineTicketBooking.Data;
+using OnlineTicketBooking.DataAccess.Model;
 using OnlineTicketBooking.Model;
 using OnlineTicketBooking.Model.DTO;
 using OnlineTicketBooking.Repository.IRepository;
@@ -15,11 +17,13 @@ namespace OnlineticketBooking.Api.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IUserRepository _userRepository;
+        protected APIResponse _response;
 
         public UserController(ApplicationDbContext databaseContext, IUserRepository userRepository)
         {
             _dbContext = databaseContext;
             _userRepository = userRepository;
+            this._response = new APIResponse();
         }
 
 
@@ -98,7 +102,14 @@ namespace OnlineticketBooking.Api.Controllers
             return Ok(_userRepository.Get());
         }
 
+        [HttpGet("{GetByemail}")]
+        public IActionResult GetByEmail(string UserEmail)
+        {
+            var data = _dbContext.Users.Find(UserEmail);
+            _response.Result = data;
+            return Ok(_response);
 
+        }
     }
 }
 

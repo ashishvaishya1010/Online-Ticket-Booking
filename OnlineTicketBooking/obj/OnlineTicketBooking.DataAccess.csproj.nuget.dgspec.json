@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {}
+    "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
+    "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
         "projectName": "OnlineTicketBooking.DataAccess",
-        "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
+        "projectPath": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\OnlineTicketBooking.DataAccess.csproj",
         "packagesPath": "C:\\Users\\ashish.vaishya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ashish.vaishya\\source\\repos\\OnlineTicketBooking\\OnlineTicketBooking\\obj\\",
+        "outputPath": "C:\\Users\\ashish.vaishya\\source\\repos\\TicketBooking\\OnlineTicketBooking\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -15,6 +15,7 @@ namespace OnlineTicketBooking.Repository.IRepository
         public Task<User> Create(User user);
         public void Update(User user);
         public void Delete(string UserEmail);
+        public User GetByEmail(string UserEmail);
         public void Save();
         bool IsUniqueUser(string username);
         Task<LoginResponseDTO> Login(LoginRequestDTO loginRequestDTO);

@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.EventId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserName)
+                @Html.DisplayNameFor(model => model.UserEmail)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumberOfTickets)
@@ -37,13 +37,13 @@
                 @Html.DisplayFor(modelItem => item.EventId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserName)
+                @Html.DisplayFor(modelItem => item.UserEmail)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumberOfTickets)
             </td>
                 <td>
-                    <a type="button" class="btn btn-success" asp-action="Details" asp-route-id="@item.Id" asp-controller="TicketBooking">Details</a>
+                    <a type="button" class="btn btn-success" asp-action="Details" asp-route-id="@item.Id" asp-controller="Booking">Details</a>
                 </td>
         </tr>
 }

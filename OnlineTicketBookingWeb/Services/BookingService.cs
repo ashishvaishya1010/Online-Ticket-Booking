@@ -21,7 +21,7 @@ namespace OnlineTicketBookingWeb.Services
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Post",
-                
+
                 Data = bookings,
                 Url = bookingUrl + "/api/Booking"
                 // Token = Token
@@ -34,13 +34,13 @@ namespace OnlineTicketBookingWeb.Services
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "delete",
-                Url = bookingUrl + "/api/Booking/" + id,
+                Url = bookingUrl + "/api/Booking/" + id
 
 
             });
         }
 
-        
+
         public Task<T> GetAllAsync<T>()
         {
             return SendAsync<T>(new APIRequest()
@@ -57,7 +57,7 @@ namespace OnlineTicketBookingWeb.Services
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Get",
-                Url = bookingUrl + "/api/Booking/"+id,
+                Url = bookingUrl + "/api/Booking/" + id
 
 
             });
@@ -69,32 +69,15 @@ namespace OnlineTicketBookingWeb.Services
             {
                 ApiType = "Put",
                 Data = bookings,
-                Url = bookingUrl + "/api/Booking/" + bookings.Id,
+                Url = bookingUrl + "/api/Booking/" + bookings.Id
 
 
             });
         }
-        public Task<T> Updatebyid<T>(int id)
-        {
-            return SendAsync<T>(new APIRequest()
-            {
-                ApiType = "Put",
-                Url = bookingUrl + "/api/Booking/Approve/" + id
-            }
-                );
-        }
-
-        public Task<T> UpdatebyidReject<T>(int id)
-        {
-            return SendAsync<T>(new APIRequest()
-            {
-                ApiType = "Put",
-                Url = bookingUrl + "/api/Booking/Reject/" + id
-            }
-                );
 
 
-        }
+
+    
 
 
     }

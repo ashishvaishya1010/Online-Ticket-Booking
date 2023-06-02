@@ -7,20 +7,20 @@ namespace OnlineTicketBookingWeb.Services
     {
         private readonly IHttpClientFactory _clientFactory;
 
-        private string TicketBookingUrl;
+        private string BookingUrl;
         public UserService(IHttpClientFactory clientFactory, IConfiguration configuration) : base(clientFactory)
         {
             _clientFactory = clientFactory;
-            TicketBookingUrl = configuration.GetValue<string>("ServiceUrls:BookTicket");
+            BookingUrl = configuration.GetValue<string>("ServiceUrls:Event");
 
         }
 
-        public Task<T> Getbyid<T>(string CustomerEmail)
+        public Task<T> GetByEmail<T>(string UserEmail)
         {
             return SendAsync<T>(new APIRequest()
             {
-                Url = TicketBookingUrl + "/api/Customer/GetbyEmail/" + CustomerEmail,
-                ApiType = "GET",
+                Url = BookingUrl + "/api/User/" + UserEmail,
+                ApiType = "GET"
 
             });
         }

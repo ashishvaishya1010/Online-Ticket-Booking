@@ -38,20 +38,11 @@ namespace OnlineTicketBookingWeb.Controllers
         
         public async Task<IActionResult> createenewrecord(BookingsVM bookings)
         {
+            bookings.ApprovedStatus = "Notapproved";
             await _bookingService.CreateAsync<APIResponse>(bookings);
             return RedirectToAction("Index");
         }
-        public async Task<ActionResult> Updatebyid(int id)
-        {
-            await _bookingService.Updatebyid<APIResponse>(id);
-            return RedirectToAction("Index");
-        }
-
-        public async Task<ActionResult> UpdatebyidReject(int id)
-        {
-            await _bookingService.UpdatebyidReject<APIResponse>(id);
-            return RedirectToAction("Index");
-        }
+      
 
         public async Task<ActionResult> Delete(int id)
         {
@@ -80,7 +71,7 @@ namespace OnlineTicketBookingWeb.Controllers
 
                 eventsVM = JsonConvert.DeserializeObject<EventsVM>(Convert.ToString(detailsofevent.Result.Result));
             }
-            var userdeatils = _userService.Getbyid<APIResponse>(bookingsVM.UserEmail);
+            var userdeatils = _userService.GetByEmail<APIResponse>(bookingsVM.UserEmail);
 
             if (userdeatils != null)
             {

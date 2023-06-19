@@ -7,7 +7,8 @@
 
 <h1>Booking List</h1>
 <div class="col text-end pt-1">
-    <a asp-controller="Booking" asp-action="CreatePage" class="btn btn-outline-primary">Create New Booking</a>
+
+   @* <a asp-controller="Booking" asp-action="CreatePage" class="btn btn-outline-primary">Create New Booking</a>*@
 </div>
 <table class="table">
     <thead>
@@ -23,6 +24,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumberOfTickets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedStatus)
             </th>
             <th></th>
         </tr>
@@ -42,9 +46,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.NumberOfTickets)
             </td>
-                <td>
-                    <a type="button" class="btn btn-success" asp-action="Details" asp-route-id="@item.Id" asp-controller="Booking">Details</a>
+            <td>
+             @Html.DisplayFor(modelItem => item.ApprovedStatus)
+             </td>
+                @if (User.IsInRole(SD.Role_Admin))
+                {
+                    <td>
+                        <a type="button" class="btn btn-success" asp-action="Details" asp-route-id="@item.Id" asp-controller="Booking">Details</a>
                 </td>
+                }
         </tr>
 }
     </tbody>

@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using OnlineTicketBooking.DataAccess.Model;
 using OnlineTicketBookingWeb.Models;
 using OnlineTicketBookingWeb.Services.IServices;
+using APIResponse = OnlineTicketBookingWeb.Models.APIResponse;
 
 namespace OnlineTicketBookingWeb.Controllers
 {
-   //  [Authorize]
+  //  [Authorize]
     public class EventController : Controller
     {
         private readonly IEventService _eventService;
@@ -16,6 +18,7 @@ namespace OnlineTicketBookingWeb.Controllers
         {
             _eventService = eventService;
         }
+     //   [Authorize]
         public async Task<IActionResult> Index()
         {
             List<EventsVM> list = new();

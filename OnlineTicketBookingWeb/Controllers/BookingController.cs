@@ -48,7 +48,7 @@ namespace OnlineTicketBookingWeb.Controllers
             bookings.UserEmail = User.Identity.Name;
             await _bookingService.CreateAsync<APIResponse>(bookings);
             TempData["success"] = "Booking Created Successfully ";
-            return RedirectToAction("CreatePage");
+            return RedirectToAction("Index");
         }
         //{
         //    bookings.ApprovedStatus = "Notapproved";

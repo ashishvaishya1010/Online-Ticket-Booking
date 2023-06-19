@@ -3,16 +3,15 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}<partial name ="_Notification"/>
+}
 
 <h1>Event List</h1>
-
-@if (User.IsInRole(SD.Role_Admin))
-{
-    <div class="col text-end pt-1">
+ <p>
+    @if (User.IsInRole(SD.Role_User))
+   @* <div class="col text-end pt-1">*@
         <a asp-controller="Event" asp-action="CreatePage" class="btn btn-outline-primary">Create New Event</a>
-    </div>
-}
+   @*</div>*@
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -44,7 +43,7 @@
 @foreach (var item in Model) {
             Html.RenderPartial("_EventPartial", item);
             <tr>
-          @*  <td>
+                @*  <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -62,20 +61,20 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AvailableSeats)
             </td>*@
-          @*  <td>
+                @*  <td>
                 @Html.DisplayFor(modelItem => item.ApprovalStatus)
 
             </td>*@
-           
-                <td>
-                    <a type="button" class="btn btn-warning" asp-action="CreatePage" asp-route-eventid="@item.Id" asp-controller="Booking">Book</a>
-                </td> 
+                @if (User.IsInRole(SD.Role_User))
+                {
             <td>
-                <a type="button" class="btn btn-warning" asp-action="editpage" asp-route-id="@item.Id" asp-controller="Event">Edit</a>
+                  <a type="button" class="btn btn-warning" asp-action="CreatePage" asp-route-eventid="@item.Id" asp-controller="Booking">Book</a>
+                    
+                 <a type="button" class="btn btn-warning" asp-action="editpage" asp-route-id="@item.Id" asp-controller="Event">Edit</a>
 
                  <a type="button" class="btn btn-danger" asp-action="Deletebyid" asp-route-id="@item.Id" asp-controller="Event">Delete</a>
             </td>
-                
+                }
         </tr>
 }
     </tbody>

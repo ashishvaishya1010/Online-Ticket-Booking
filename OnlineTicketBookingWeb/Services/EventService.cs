@@ -1,4 +1,5 @@
-﻿using OnlineTicketBooking.Model;
+﻿using AutoMapper;
+using OnlineTicketBooking.Model;
 using OnlineTicketBookingWeb.Models;
 using OnlineTicketBookingWeb.Services.IServices;
 
@@ -8,20 +9,23 @@ namespace OnlineTicketBookingWeb.Services
     {
         private readonly IHttpClientFactory _clientFactory;
         private string eventUrl;
+        private readonly IMapper _mapper;
 
-        public EventService(IHttpClientFactory clientFactory, IConfiguration configuration) : base(clientFactory)
+        public EventService(IHttpClientFactory clientFactory, IConfiguration configuration,IMapper mapper) : base(clientFactory)
         {
             _clientFactory = clientFactory;
+            _mapper = mapper;
             eventUrl = configuration.GetValue<string>("ServiceUrls:Event");
 
         }
 
         public Task<T> CreateAsync<T>(EventsVM events)
         {
+            var data = _mapper.Map<Event>(events);
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Post",
-                Data = events,
+                Data = data,
                 Url = eventUrl + "/api/Event",
               // Token = Token
 
@@ -63,10 +67,11 @@ namespace OnlineTicketBookingWeb.Services
 
         public Task<T> UpdateAsync<T>(EventsVM events)
         {
+            var data = _mapper.Map<Event>(events);
             return SendAsync<T>(new APIRequest()
             {
                 ApiType = "Put",
-                Data = events,
+                Data = data,
                 Url = eventUrl + "/api/Event"
              
 

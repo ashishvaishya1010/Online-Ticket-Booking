@@ -33,6 +33,7 @@ builder.Services.AddHttpClient<IBookingService, BookingService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddHttpClient<IUserService, UserService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<CountdownViewComponent>();
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();

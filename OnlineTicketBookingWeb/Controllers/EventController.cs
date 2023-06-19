@@ -11,6 +11,7 @@ namespace OnlineTicketBookingWeb.Controllers
     {
         private readonly IEventService _eventService;
 
+
         public EventController(IEventService eventService)
         {
             _eventService = eventService;

@@ -27,7 +27,7 @@
                        @*@ <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="User" asp-action="Index">Users</a>
                         </li>*@
-                        @if (User.IsInRole(SD.Role_Admin) || (User.IsInRole(SD.Role_User)))
+                        @if  (User.IsInRole(SD.Role_User))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Index">Events</a>

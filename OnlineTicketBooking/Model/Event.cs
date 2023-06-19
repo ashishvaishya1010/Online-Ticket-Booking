@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,22 +11,17 @@ namespace OnlineTicketBooking.Model
     public class Event
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
+        [StringLength(20, ErrorMessage = "Event Name cannot exceed 20 characters.")]
         public string EventName { get; set; }
 
-        [Required]
+        [StringLength(500, ErrorMessage = "Event Description cannot exceed 500 characters.")]
         public string EventDescription { get; set; }
-
-        [Required]
         [DataType(DataType.Date)]
         public DateTime EventDate { get; set; }
-
-        [Required]
         public string Location { get; set; }
-
-        [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Available seats must be a positive number.")]
         public int AvailableSeats { get; set; }
 

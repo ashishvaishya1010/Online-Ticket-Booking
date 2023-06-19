@@ -562,3 +562,5 @@ C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineTicketBookingWeb\obj\De
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineTicketBookingWeb\obj\Debug\net8.0\OnlineTicketBookingWeb.pdb
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineTicketBookingWeb\obj\Debug\net8.0\OnlineTicketBookingWeb.genruntimeconfig.cache
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineTicketBookingWeb\obj\Debug\net8.0\ref\OnlineTicketBookingWeb.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBookingWeb\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineTicketBookingWeb\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

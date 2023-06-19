@@ -75,16 +75,9 @@ namespace OnlineticketBooking.Api.Controllers
             var result = _userRepository.Get();
             return Ok(result);
         }
-        //[HttpPost]
-        //public IActionResult Create(Customer customer)
-        //{
-
-        //    _customerRepository.Create(customer);
-        //    _customerRepository.Save();
-        //    return Ok(_customerRepository.Get());
-        //}
+        
         [HttpPut]
-        [Authorize(Roles = "admin")]
+       [Authorize(Roles = "admin")]
 
         public IActionResult Update(User user)
         {
@@ -93,7 +86,7 @@ namespace OnlineticketBooking.Api.Controllers
             return Ok(_userRepository.Get());
         }
         [HttpDelete]
-        [Authorize(Roles = "admin")]
+       [Authorize(Roles = "admin")]
 
         public IActionResult Delete(string UserEmail)
         {
@@ -102,7 +95,7 @@ namespace OnlineticketBooking.Api.Controllers
             return Ok(_userRepository.Get());
         }
 
-        [HttpGet("{GetByemail}")]
+        [HttpGet("GetByemail")]
         public IActionResult GetByEmail(string UserEmail)
         {
             var data = _dbContext.Users.Find(UserEmail);

@@ -29,7 +29,7 @@ namespace OnlineticketBooking.Api.Controllers
             _APIResponse.Result = data;
             return Ok(_APIResponse);
         }
-            [HttpGet]
+        [HttpGet]
         public IActionResult Get()
         {
             var result = _eventRepository.Get();

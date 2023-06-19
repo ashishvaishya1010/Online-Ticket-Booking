@@ -182,3 +182,4 @@ C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineticketBooking.Api\obj\D
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineticketBooking.Api\obj\Debug\net8.0\OnlineticketBooking.Api.pdb
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineticketBooking.Api\obj\Debug\net8.0\OnlineticketBooking.Api.genruntimeconfig.cache
 C:\Users\ashish.vaishya\source\repos\TicketBooking\OnlineticketBooking.Api\obj\Debug\net8.0\ref\OnlineticketBooking.Api.dll
+C:\Users\ashish.vaishya\source\repos\OnlineTicketBooking\OnlineticketBooking.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll

@@ -50,7 +50,7 @@ namespace OnlineTicketBookingWeb.Services
             });
         }
 
-        public Task<T> GetAsync<T>(int id)
+        public Task<T> GetByid<T>(int id)
         {
             return SendAsync<T>(new APIRequest()
             {

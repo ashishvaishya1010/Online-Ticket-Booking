@@ -2722,6 +2722,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0-preview.4.23260.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0-preview.4.23260.4",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.0-preview.4.23260.4",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3"
         },

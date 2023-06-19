@@ -1,10 +1,12 @@
 ﻿using Azure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineTicketBooking.Data;
 using OnlineTicketBooking.DataAccess.Model;
 using OnlineTicketBooking.Model;
 using OnlineTicketBooking.Repository.IRepository;
+using System.Data;
 
 namespace OnlineticketBooking.Api.Controllers
 {
@@ -14,18 +16,21 @@ namespace OnlineticketBooking.Api.Controllers
     {
         private readonly ApplicationDbContext _databaseContext;
         private readonly IBookingRepository _bookingRepository;
+        private readonly IEventRepository _eventRepository;
         private object _dbContext;
         protected APIResponse _APIResponse;
 
-        public BookingController(ApplicationDbContext databaseContext, IBookingRepository bookingRepository)
+        public BookingController(ApplicationDbContext databaseContext, IBookingRepository bookingRepository, IEventRepository eventRepository)
         {
             _databaseContext = databaseContext;
             _bookingRepository = bookingRepository;
+            _eventRepository = eventRepository;
             this._APIResponse = new APIResponse();
         }
 
       
         [HttpGet]
+     
         public IActionResult Get()
         {
             var result = _bookingRepository.Get();
@@ -34,6 +39,7 @@ namespace OnlineticketBooking.Api.Controllers
         }
 
         [HttpGet("{id:int}")]
+       
         public IActionResult Getbyid(int id)
         {
             var data = _databaseContext.Bookings.Find(id);
@@ -41,8 +47,16 @@ namespace OnlineticketBooking.Api.Controllers
             return Ok(_APIResponse);
         }
         [HttpPost]
+        
         public IActionResult Create(Booking booking)
         {
+            //// Available seats count 
+            var data = _databaseContext.Events.Find(booking.EventId);
+            int result = data.AvailableSeats - booking.NumberOfTickets;
+            data.AvailableSeats = result;
+            _eventRepository.Update(data);
+            _eventRepository.Save();
+           
 
             _bookingRepository.Create(booking);
             _bookingRepository.Save();

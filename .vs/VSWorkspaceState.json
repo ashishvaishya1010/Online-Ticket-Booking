@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\OnlineTicketBookingWeb",
+    "\\OnlineTicketBookingWeb\\Areas",
+    "\\OnlineTicketBookingWeb\\Areas\\Identity",
+    "\\OnlineTicketBookingWeb\\Areas\\Identity\\Pages",
+    "\\OnlineTicketBookingWeb\\Areas\\Identity\\Pages\\Account"
+  ],
+  "SelectedNode": "\\TicketBooking.sln",
+  "PreviewInSolutionExplorer": false
+}

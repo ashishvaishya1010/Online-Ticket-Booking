@@ -27,10 +27,10 @@
 <div class="p-5">
     <div class="row">
         <div class="col p-3 text-end">
-            <a type="button" class="btn btn-success" asp-action="Updatebyid" asp-route-id=" @ViewData["Bookid"]" asp-action="">Approve</a>
+            <a type="button" class="btn btn-success" asp-action="UpdatebyidApprove" asp-route-id=" @ViewData["Bookid"]" asp-action="">Approve</a>
         </div>
         <div class="col p-3">
-            <a type="button" class="btn btn-danger" asp-controller="TicketBooking" asp-action="UpdatebyidReject" asp-route-id=" @ViewData["Bookid"]" asp-action="Index">Reject</a>
+            <a type="button" class="btn btn-danger" asp-action="UpdatebyidNotApprove" asp-route-id=" @ViewData["Bookid"]" asp-action="">Reject</a>
         </div>
     </div>
 </div>

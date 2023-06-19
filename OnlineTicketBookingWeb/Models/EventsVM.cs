@@ -24,7 +24,7 @@ namespace OnlineTicketBookingWeb.Models
         [Range(0, int.MaxValue, ErrorMessage = "Available seats must be a positive number.")]
         public int AvailableSeats { get; set; }
 
-        public ApprovalStatus ApprovalStatus { get; set; }
+      //  public ApprovalStatus ApprovalStatus { get; set; }
     }
 
     public enum ApprovalStatus

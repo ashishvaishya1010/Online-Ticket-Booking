@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using OnlineTicketBookingWeb.Models;
 using OnlineTicketBookingWeb.Services;
@@ -6,6 +8,7 @@ using OnlineTicketBookingWeb.Services.IServices;
 
 namespace OnlineTicketBookingWeb.Controllers
 {
+   // [Authorize]
     public class BookingController : Controller
     {
         private readonly IBookingService _bookingService;
@@ -31,22 +34,45 @@ namespace OnlineTicketBookingWeb.Controllers
             }
             return View(list);
         }
-        public IActionResult CreatePage()
+        public IActionResult CreatePage(int eventid)
         {
+            TempData["Eventid"] = eventid;
             return View();
         }
         
         public async Task<IActionResult> createenewrecord(BookingsVM bookings)
         {
-            bookings.ApprovedStatus = "Notapproved";
+            bookings.Id = 0;
+            bookings.EventId = Convert.ToInt32(TempData["Eventid"]);
+            bookings.ApprovedStatus = "Pending";
+            bookings.UserEmail = User.Identity.Name;
             await _bookingService.CreateAsync<APIResponse>(bookings);
+            TempData["success"] = "Booking Created Successfully ";
+            return RedirectToAction("CreatePage");
+        }
+        //{
+        //    bookings.ApprovedStatus = "Notapproved";
+        //    await _bookingService.CreateAsync<APIResponse>(bookings);
+        //    return RedirectToAction("Index");
+        //}
+        public async Task<ActionResult> UpdatebyidNotApprove(int id)
+        {
+            await _bookingService.UpdatebyidNotApprove<APIResponse>(id);
+            TempData["success"] = "Rejected ";
             return RedirectToAction("Index");
         }
-      
+        public async Task<ActionResult> UpdatebyidApprove(int id)
+        {
+            await _bookingService.UpdatebyidApprove<APIResponse>(id);
+            TempData["success"] = "Approved ";
+            return RedirectToAction("Index");
+        }
+
 
         public async Task<ActionResult> Delete(int id)
         {
             await _bookingService.DeleteAsync<APIResponse>(id);
+            TempData["success"] = "Booking Deleted Successfully";
             return RedirectToAction("Index");
         }
         public ActionResult Details(int id)
@@ -57,7 +83,7 @@ namespace OnlineTicketBookingWeb.Controllers
             UserVM userVM = new();
             EventsVM eventsVM = new EventsVM();
 
-            var detailsofticket = _bookingService.GetAsync<APIResponse>(id);
+            var detailsofticket = _bookingService.GetByid<APIResponse>(id);
             if (detailsofticket != null)
             {
 
@@ -65,13 +91,14 @@ namespace OnlineTicketBookingWeb.Controllers
             }
             // var detailsofevent = _eventService.Getyid<APIResponse>(BookingsVM.EventId);
             
-            var detailsofevent = _eventService.GetAsync<APIResponse>(bookingsVM.EventId);
+            var detailsofevent = _eventService.GetByid<APIResponse>(bookingsVM.EventId);
             if (detailsofevent != null)
             {
 
                 eventsVM = JsonConvert.DeserializeObject<EventsVM>(Convert.ToString(detailsofevent.Result.Result));
             }
-            var userdeatils = _userService.GetByEmail<APIResponse>(bookingsVM.UserEmail);
+            var userdeatils = _userService.GetByid<APIResponse>(bookingsVM.UserEmail);
+            //var userdeatils = _userService.GetByid<APIResponse>("ashish@gmail.com");
 
             if (userdeatils != null)
             {

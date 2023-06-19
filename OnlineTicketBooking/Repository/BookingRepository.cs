@@ -26,8 +26,8 @@ namespace OnlineTicketBooking.Repository
 
         public void Delete(int Id)
         {
-            Booking ticketBooking = _dbContext.Bookings.Find(Id);
-            _dbContext.Bookings.Remove(ticketBooking);
+            Booking booking = _dbContext.Bookings.Find(Id);
+            _dbContext.Bookings.Remove(booking);
         }
 
         public IEnumerable<Booking> Get()

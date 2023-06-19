@@ -6,11 +6,13 @@ namespace OnlineTicketBookingWeb.Services.IServices
     {
 
         Task<T> GetAllAsync<T>();
-        Task<T> GetAsync<T>(int id);
+        Task<T> GetByid<T>(int id);
         Task<T> CreateAsync<T>(BookingsVM bookings);
         Task<T> UpdateAsync<T>(BookingsVM bookings);
         Task<T> DeleteAsync<T>(int id);
+        Task<T> UpdatebyidApprove<T>(int id);
+        Task<T> UpdatebyidNotApprove<T>(int id);
         //Task<T> GetByid<T>(int id);
-     
+
     }
 }

@@ -43,8 +43,6 @@ namespace OnlineTicketBooking.Repository
 
         public void Update(Event Event)
         {
-         //   Event Events = _dbContext.Events.Find(Event.Id);
-           // Events.EventDate = Event.EventDate;
 
         //    _dbContext.Entry(Events).State = EntityState.Detached;
 

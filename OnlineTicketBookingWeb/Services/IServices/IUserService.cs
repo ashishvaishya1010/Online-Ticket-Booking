@@ -7,7 +7,7 @@ namespace OnlineTicketBookingWeb.Services.IServices
         Task<T> LoginAsync<T>(LoginRequestVM loginRequestVM);
 
         Task<T> RegisterAsync<T>(UserVM userVM);
-        Task<T> GetByEmail<T>(string Email);
+        Task<T> GetByid<T>(string Email);
 
     }
 }

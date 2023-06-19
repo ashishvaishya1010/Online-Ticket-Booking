@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineTicketBooking.Model;
 using OnlineTicketBookingWeb.Models;
 using OnlineTicketBookingWeb.Services.IServices;
 
@@ -52,7 +53,7 @@ namespace OnlineTicketBookingWeb.Services
             });
         }
 
-        public Task<T> GetAsync<T>(int id)
+        public Task<T> GetByid<T>(int id)
         {
             return SendAsync<T>(new APIRequest()
             {
@@ -75,11 +76,31 @@ namespace OnlineTicketBookingWeb.Services
             });
         }
 
+        //Appoved 
+        public Task<T> UpdatebyidApprove<T>(int id)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = "Put",
+                // Data = bookings,
+                Url = bookingUrl + "/api/Booking/Approve/" + id
 
 
-    
+            });
+        }
+        //Rejected 
+
+        public Task<T> UpdatebyidNotApprove<T>(int id)
+        {
+            return SendAsync<T>(new APIRequest()
+            {
+                ApiType = "Put",
+                //   Data = bookings,
+                Url = bookingUrl + "/api/Booking/Reject/" + id
 
 
+            });
+        }
     }
 }
 

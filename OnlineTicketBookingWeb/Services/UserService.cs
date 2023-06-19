@@ -3,7 +3,7 @@ using OnlineTicketBookingWeb.Services.IServices;
 
 namespace OnlineTicketBookingWeb.Services
 {
-    public class UserService : BaseService,IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly IHttpClientFactory _clientFactory;
 
@@ -15,11 +15,11 @@ namespace OnlineTicketBookingWeb.Services
 
         }
 
-        public Task<T> GetByEmail<T>(string UserEmail)
+        public Task<T> GetByid<T>(string UserEmail)
         {
             return SendAsync<T>(new APIRequest()
             {
-                Url = BookingUrl + "/api/User/" + UserEmail,
+                Url = BookingUrl + "/api/User/GetByemail?UserEmail=" + UserEmail,
                 ApiType = "GET"
 
             });
@@ -32,8 +32,15 @@ namespace OnlineTicketBookingWeb.Services
 
         public Task<T> RegisterAsync<T>(UserVM userVM)
         {
-            throw new NotImplementedException();
+            return SendAsync<T>(new APIRequest()
+            {
+                Url = BookingUrl + "/api/User/register",
+                ApiType = "Post",
+                Data = userVM
+
+
+            });
         }
-    }
+    } 
 }
 
